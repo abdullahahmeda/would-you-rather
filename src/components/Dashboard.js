@@ -13,8 +13,10 @@ class Dashboard extends Component {
     const { authedUser, users, questions } = this.props
     const answeredQuestionsIds = Object.keys(users[authedUser].answers)
     const answeredQuestions = answeredQuestionsIds.map(questionId => questions[questionId])
+    answeredQuestions.sort((a, b) => b.timestamp - a.timestamp)
     const unAnswredQuestionsIds = Object.keys(questions).filter(questionId => answeredQuestionsIds.findIndex(qId => qId === questionId) === -1)
     const unAnsweredQuestions = unAnswredQuestionsIds.map(questionId => questions[questionId])
+    unAnsweredQuestions.sort((a, b) => b.timestamp - a.timestamp)
     
     this.setState({
       unAnsweredQuestions,

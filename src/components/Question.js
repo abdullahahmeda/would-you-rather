@@ -62,8 +62,8 @@ class Question extends Component {
                   )
                 : (
                   <div>
-                    <div className={`question__option ${question.optionOne.votes.indexOf(authedUser) > -1 ? 'selected-option' : ''}`}>{question.optionOne.text}</div>
-                    <div className={`question__option ${question.optionTwo.votes.indexOf(authedUser) > -1 ? 'selected-option' : ''}`}>{question.optionTwo.text}</div>
+                    <div className={`question__option ${question.optionOne.votes.indexOf(authedUser) > -1 ? 'selected-option' : ''}`}>{question.optionOne.text} [{question.optionOne.votes.length} out of {question.optionOne.votes.length + question.optionTwo.votes.length} votes ({(question.optionOne.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length) * 100).toFixed(2)}%)]</div>
+                    <div className={`question__option ${question.optionTwo.votes.indexOf(authedUser) > -1 ? 'selected-option' : ''}`}>{question.optionTwo.text} [{question.optionTwo.votes.length} out of {question.optionOne.votes.length + question.optionTwo.votes.length} votes ({(question.optionTwo.votes.length / (question.optionOne.votes.length + question.optionTwo.votes.length) * 100).toFixed(2)}%)]</div>
                   </div>
                   )}
             </div>
