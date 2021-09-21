@@ -6,6 +6,7 @@ A React & Redux project.
 In your project directory run:
 - `npm install`, then
 - `npm start`
+
 and that's it!
 
 ## Data
